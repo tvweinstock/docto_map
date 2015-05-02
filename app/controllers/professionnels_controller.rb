@@ -18,7 +18,7 @@ class ProfessionnelsController < ApplicationController
   def create
     @professionnel = Professionnel.new(professionnel_params)
     if @professionnel.save
-      redirect_to professionnel_url
+      redirect_to professionnels_url
     else
       render :new
     end
