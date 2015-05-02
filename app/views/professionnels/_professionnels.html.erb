@@ -15,5 +15,5 @@
 
 
 <%= javascript_tag do %>
-  window.mainMap.coords = <%= raw Professionnel.all.to_a.map {|p| {latitude: p.latitude, longitude: p.longitude}}.to_json %>
+  window.mainMap.coords = <%= raw Professionnel.all.to_a.map {|p| {latitude: p.latitude, longitude: p.longitude, name: p.nom}}.to_json %>
 <% end %>
