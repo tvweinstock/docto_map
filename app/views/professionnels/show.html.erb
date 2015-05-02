@@ -2,12 +2,39 @@
   <section>
     <h1> Professionnels de la santé</h1>
 
-    <div class="row">
+    <div class="row row-spacing">
       <div class="col-md-1">
-        <strong>Nom</strong>
+        <strong> Prenom </strong>
+      </div>
+      <div class="col-md-3">
+        <%= @professionnel.prenom %>
+      </div>
+    </div>
+
+    <div class="row row-spacing">
+      <div class="col-md-1">
+        <strong> Nom </strong>
       </div>
       <div class="col-md-3">
         <%= @professionnel.nom %>
+      </div>
+    </div>
+
+    <div class="row row-spacing">
+      <div class="col-md-1">
+        <strong> Spécialité </strong>
+      </div>
+      <div class="col-md-3">
+        <%= @professionnel.specialite %>
+      </div>
+    </div>
+
+    <div class="row row-spacing">
+      <div class="col-md-1">
+        <strong> Adresse </strong>
+      </div>
+      <div class="col-md-3">
+        <%= @professionnel.address %>
       </div>
     </div>
     

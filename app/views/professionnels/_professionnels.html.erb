@@ -1,19 +1,26 @@
-<div class="col-md-12">
-  <% Professionnel.all.each do |professionnel| %>
-    <div class="row row-spacing">
-      <div class="col-md-3">
-        <%= link_to professionnel.nom, professionnel_path(professionnel) %>
-      </div>
-      <div class="col-md-3">
-        <%= link_to 'Modifier', edit_professionnel_path(professionnel), :class => "btn btn-info btn-sm" %>
-        <%= link_to 'Supprimer',professionnel, method: 'delete', data: { confirm: 'Est-ce-que vous êtes certain?' }, :class => "btn btn-danger btn-sm" %>
-      </div>
-    </div>
-  <% end %>
-  <div class="main-map-canvas"></div>
+<div class="row row-spacing">
+  <div class="col-md-1">
+    <strong>Nom</strong>
+  </div>
+  <div class="col-md-1">
+    <strong>Spécialité</strong>
+  </div>
 </div>
-
-
+<% Professionnel.all.each do |professionnel| %>
+  <div class="row row-spacing">
+    <div class="col-md-1">
+      <%= link_to professionnel.nom, professionnel_path(professionnel) %>
+    </div>
+    <div class="col-md-1">
+      <%= professionnel.specialite %>
+    </div>
+    <div class="col-md-3">
+      <%= link_to 'Modifier', edit_professionnel_path(professionnel), :class => "btn btn-info btn-sm" %>
+      <%= link_to 'Supprimer',professionnel, method: 'delete', data: { confirm: 'Est-ce-que vous êtes certain?' }, :class => "btn btn-danger btn-sm" %>
+    </div>
+  </div>
+<% end %>
+<div class="main-map-canvas"></div>
 <%= javascript_tag do %>
-  window.mainMap.coords = <%= raw Professionnel.all.to_a.map {|p| {latitude: p.latitude, longitude: p.longitude, name: p.nom}}.to_json %>
+window.mainMap.coords = <%= raw Professionnel.all.to_a.map {|p| {latitude: p.latitude, longitude: p.longitude, name: p.nom}}.to_json %>
 <% end %>
