@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502051050) do
+ActiveRecord::Schema.define(version: 20150502081001) do
 
   create_table "professionnels", force: true do |t|
     t.string   "nom"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20150502051050) do
     t.string   "specialite"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "longitude",  precision: 9, scale: 6
+    t.decimal  "latitude",   precision: 9, scale: 6
   end
 
 end
