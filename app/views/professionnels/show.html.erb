@@ -1,2 +1,18 @@
-<h1>Professionnels#show</h1>
-<p>Find me in app/views/professionnels/show.html.erb</p>
+<div class="container">
+  <section>
+    <h1> Professionnels de la santé</h1>
+
+    <div class="row">
+      <div class="col-md-1">
+        <strong>Nom</strong>
+      </div>
+      <div class="col-md-3">
+        <%= @professionnel.nom %>
+      </div>
+    </div>
+    
+  </section>
+  <%= link_to 'Retour', professionnels_path, :class => 'btn btn-info btn-sm' %>
+  <%= link_to 'Modifier', edit_professionnel_path(@professionnel), :class => 'btn btn-success btn-sm' %>
+  
+</div>

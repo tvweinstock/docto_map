@@ -1,7 +1,11 @@
 <% Professionnel.all.each do |professionnel| %>
-  
-
-  <%= professionnel.nom %>
-
-
+  <div class="row row-spacing">
+    <div class="col-md-3">
+     <%= link_to professionnel.nom, professionnel_path(professionnel) %>
+    </div>
+    <div class="col-md-3">
+      <%= link_to 'Modifier', edit_professionnel_path(professionnel), :class => "btn btn-info btn-sm" %>
+      <%= link_to 'Supprimer',professionnel, method: 'delete', data: { confirm: 'Est-ce-que vous êtes certain?' }, :class => "btn btn-danger btn-sm" %>
+    </div>
+  </div>
 <% end %>
