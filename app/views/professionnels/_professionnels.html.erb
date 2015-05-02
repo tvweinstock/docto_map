@@ -2,7 +2,7 @@
   <% Professionnel.all.each do |professionnel| %>
     <div class="row row-spacing">
       <div class="col-md-3">
-       <%= link_to professionnel.nom, professionnel_path(professionnel) %>
+        <%= link_to professionnel.nom, professionnel_path(professionnel) %>
       </div>
       <div class="col-md-3">
         <%= link_to 'Modifier', edit_professionnel_path(professionnel), :class => "btn btn-info btn-sm" %>
@@ -15,5 +15,5 @@
 
 
 <%= javascript_tag do %>
-  <!-- window.myMap.coords = <%#raw professionnel_coords.map { |p| {latitude: p.latitude, longitude: p.longitude}}.to_json %> -->
+  window.myMap.coords = <%= raw Professionnel.all.to_a.map {|p| {latitude: p.latitude, longitude: p.longitude}}.to_json %>
 <% end %>
