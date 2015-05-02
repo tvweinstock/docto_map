@@ -2,11 +2,7 @@
   <section>
     <h1> Professionnels de la santé</h1>
 
-    <% Professionnel.all.each do |professionnel| %>
-        
-        <%= professionnel.nom %>
-
-    <% end %>
+    <%= render 'professionnels' %>
 
     <%= link_to 'Ajouté un nouveau profil', new_professionnel_path %>
     
