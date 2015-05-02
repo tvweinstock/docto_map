@@ -10,10 +10,10 @@
       </div>
     </div>
   <% end %>
-  <div class="map-canvas"></div>
+  <div class="main-map-canvas"></div>
 </div>
 
 
 <%= javascript_tag do %>
-  window.myMap.coords = <%= raw Professionnel.all.to_a.map {|p| {latitude: p.latitude, longitude: p.longitude}}.to_json %>
+  window.mainMap.coords = <%= raw Professionnel.all.to_a.map {|p| {latitude: p.latitude, longitude: p.longitude}}.to_json %>
 <% end %>

@@ -1,23 +1,28 @@
-window.myMap = {};
+window.mainMap = {};
 
-myMap.init = function() {
+mainMap.init = function() {
   var options = {
     zoom: 14, 
-    center: new google.maps.LatLng(this.latitude, this.longitude),
+    center: new google.maps.LatLng(48.858093, 2.294694),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
-  this.canvas = new google.maps.Map($('.map-canvas')[0], options)
+  this.canvas = new google.maps.Map($('.main-map-canvas')[0], options)
 
-  if (this.showMarker) {
-    var myMarker = new google.maps.Marker({
-      position: new google.maps.LatLng(this.latitude, this.longitude),
-      map: this.canvas
-    });
-  }
+  if (this.coords) this.addMarkers();
+}
 
+mainMap.addMarkers = function() {
+  var image = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+  this.coords.forEach(function(coord) {
+   myMarker = new google.maps.Marker({
+    position: new google.maps.LatLng(coord.latitude, coord.longitude),
+    map: mainMap.canvas,
+    icon: image
+  });
+ });
 }
 
 $(document).on('ready page:load', function() {
-  if ($('.map-canvas').length) myMap.init(); 
+  if ($('.main-map-canvas').length) mainMap.init(); 
 });
