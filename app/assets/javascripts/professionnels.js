@@ -3,7 +3,7 @@ window.mainMap = {};
 mainMap.init = function() {
   var options = {
     zoom: 7, 
-    center: new google.maps.LatLng(48.858093, 2.294694),
+    center: new google.maps.LatLng(46.768196, 2.432664),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 

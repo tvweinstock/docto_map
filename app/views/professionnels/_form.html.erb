@@ -1,51 +1,52 @@
 <%= form_for @professionnel, :html => {:class => 'form-horizontal'} do |f| %>
 
-  <% if @professionnel.errors.any? %>
-    <div class="error_explanation">
-      <h4> Avant que vous pouvez sauvegarder ce profile notez le suivante</h4>
-      <ul>
-        <% @professionnel.errors.full_messages.each do |msg| %>
-          <li> <%= msg %> </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @professionnel.errors.any? %>
+<div class="error_explanation">
+  <h4> Avant que vous pouvez sauvegarder ce profile notez le suivante</h4>
+  <ul>
+    <% @professionnel.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="form-group">
-    <div class="field">
-      <%= f.label :nom, :class => 'col-sm-2 control-label' %>
-      <div class="col-sm-10">
-        <%= f.text_field :nom, :class => 'form-control' %>
-      </div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :nom, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :nom, :class => 'form-control' %>
     </div>
   </div>
-  <div class="form-group">
-    <div class="field">
-      <%= f.label :prenom, :class => 'col-sm-2 control-label' %>
-      <div class="col-sm-10">
-        <%= f.text_field :prenom, :class => 'form-control' %>
-      </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :prenom, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :prenom, :class => 'form-control' %>
     </div>
   </div>
-  <div class="form-group">
-    <div class="field">
-      <%= f.label 'Adresse', :class => 'col-sm-2 control-label' %>
-      <div class="col-sm-10">
-        <%= f.text_field :address, :class => 'form-control' %>
-      </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label 'Adresse', :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :address, :class => 'form-control' %>
     </div>
   </div>
-  <div class="form-group">
-    <div class="field">
-      <%= f.label :specialite, :class => 'col-sm-2 control-label' %>
-      <div class="col-sm-10">
-        <%= f.text_field :specialite, :class => 'form-control' %>
-      </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :specialite, :class => 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :specialite, :class => 'form-control' %>
     </div>
   </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit nil, :class => 'btn btn-default' %>
-    </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit nil, :class => 'btn btn-default' %>
+    <%= link_to 'Retourner', professionnels_path, :class => 'btn btn-default btn-success' %>
   </div>
+</div>
 <% end %>
